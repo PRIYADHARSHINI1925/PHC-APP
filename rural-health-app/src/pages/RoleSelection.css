@@ -1,0 +1,151 @@
+/* RoleSelection.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.role-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.header h2 {
+  color: #4a5c2a;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #6b8e3d;
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.role-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  text-transform: none;
+  letter-spacing: 0.3px;
+}
+
+.button-icon {
+  font-size: 1.3rem;
+}
+
+.admin-button {
+  background: linear-gradient(135deg, #6b8e3d, #7a9c44);
+  box-shadow: 0 4px 15px rgba(107, 142, 61, 0.3);
+}
+
+.admin-button:hover {
+  background: linear-gradient(135deg, #5a7a33, #6b8e3d);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 142, 61, 0.4);
+}
+
+.staff-button {
+  background: linear-gradient(135deg, #8fbc5a, #a3cc6b);
+  box-shadow: 0 4px 15px rgba(143, 188, 90, 0.3);
+}
+
+.staff-button:hover {
+  background: linear-gradient(135deg, #7da84f, #8fbc5a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(143, 188, 90, 0.4);
+}
+
+.superadmin-button {
+  background: linear-gradient(135deg, #4a5c2a, #5a6f33);
+  box-shadow: 0 4px 15px rgba(74, 92, 42, 0.3);
+}
+
+.superadmin-button:hover {
+  background: linear-gradient(135deg, #3d4b22, #4a5c2a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 92, 42, 0.4);
+}
+
+.role-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .role-box {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+  
+  .header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .role-button {
+    font-size: 1rem;
+    padding: 14px 20px;
+  }
+  
+  .button-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .center-wrapper {
+    padding: 10px;
+  }
+  
+  .role-box {
+    padding: 25px 15px;
+  }
+  
+  .header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+}
