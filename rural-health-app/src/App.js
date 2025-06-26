@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RoleSelection from './pages/RoleSelection';
 import AdminLogin from './pages/AdminLogin';
 import StaffLogin from './pages/StaffLogin';
+import SuperAdminPortal from './pages/SuperAdminPortal';
 
 import Sidebar from './components/Sidebar';
 import PatientRegistration from './components/PatientRegistration';
@@ -18,6 +19,8 @@ function App() {
         <Route path="/" element={<RoleSelection />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/staff" element={<StaffLogin />} />
+        <Route path="/superadmin-portal" element={<SuperAdminPortal />} />
+
 
         {/* Dashboard Routes */}
         <Route

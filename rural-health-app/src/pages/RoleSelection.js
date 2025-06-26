@@ -29,7 +29,7 @@ function RoleSelection() {
           </button>
           <button 
             className="role-button superadmin-button"
-            onClick={() => navigate('/superadmin')}
+            onClick={() => navigate('/superadmin-portal')}
           >
             <span className="button-icon">⚡</span>
             SuperAdmin Login

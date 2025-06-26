@@ -57,22 +57,59 @@
   background: rgba(160, 82, 45, 0.2);
 }
 
+/* Menu items container - initially hidden */
 .sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  max-height: 0;
+  overflow: hidden;
   opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-10px);
 }
 
-@keyframes fadeIn {
+/* Show menu when active */
+.sidebar.menu-open ul {
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation for individual menu items */
+.sidebar.menu-open li {
+  animation: slideInFromLeft 0.5s ease forwards;
+}
+
+.sidebar.menu-open li:nth-child(1) { animation-delay: 0.1s; }
+.sidebar.menu-open li:nth-child(2) { animation-delay: 0.2s; }
+.sidebar.menu-open li:nth-child(3) { animation-delay: 0.3s; }
+.sidebar.menu-open li:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInFromLeft {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateX(-40px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
+  }
+}
+
+/* Fade out animation when closing */
+.sidebar:not(.menu-open) li {
+  animation: slideOutToLeft 0.3s ease forwards;
+}
+
+@keyframes slideOutToLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
   }
 }
 
@@ -81,6 +118,9 @@
   border-bottom: 1px solid rgba(222, 184, 135, 0.15);
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.3s ease;
 }
 
 .sidebar li:last-child {
@@ -148,6 +188,12 @@
   opacity: 1;
 }
 
+/* Hamburger icon animation */
+.sidebar.menu-open .hamburger {
+  transform: rotate(90deg);
+  color: #FFEFD5;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .sidebar {
@@ -187,4 +233,15 @@
 
 .sidebar li:nth-child(even) {
   background: rgba(205, 133, 63, 0.05);
+}
+
+/* Menu closed state styling */
+.sidebar:not(.menu-open) .menu-toggle {
+  border-bottom: 2px solid rgba(168, 196, 162, 0.4);
+}
+
+/* Additional visual feedback for menu state */
+.sidebar.menu-open .menu-toggle {
+  background: rgba(168, 196, 162, 0.25);
+  border-bottom: 2px solid rgba(168, 196, 162, 0.5);
 }
